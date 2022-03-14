@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div>
+    
+    <h1 class="gamename">ROCK, PAPER, SCISSOR?<br></h1>
+    <div class="game"> 
+         <div class="player">
+                <h1 class="playert">PLAYER</h1>
+                <div class="pinfo">
+                    <img class="plogo" src="player.png" alt="Logo not found"/>
+                    <p class="pscore" id="playerScoreid" >Score : 0</p>
+                </div>
+                <div class="pselections">
+
+                    <div class="rock" id="rockdiv">
+                        <p class="gameselectiontext" id="procktxt">ROCK</p>
+                        <img class="rockimg" src="rock.png" alt="Img not found" id="prock">
+                    </div>
+
+                    <div class="paper" id="paperdiv">
+                        <p class="gameselectiontext" id="ppapertxt">PAPER</p>
+                        <img class="paperimg" src="paper.png" alt="Img not found" id="ppaper" >
+                    </div>
+
+                    <div class="scissor" id="scissordiv">
+                        <p class="gameselectiontext" id="pscissortxt">SCISSOR</p>
+                        <img class="scissorimg" src="scissors.png" alt="Img not found" id="pscissor">
+                    </div>
+
+                </div>
+            </div>
+            <div class="computer">
+                <h1 class="computert">COMPUTER</h1>
+                <div class="cinfo">
+                    <img class="clogo" src="computer.png" alt="Logo not found"/>
+                    <div class="compscore">
+                    <p class="cscore" id="computerScoreid">Score : 0</p></div>
+                </div>
+                <div class="cselections">
+                    <div class="rock" id="crockdiv">
+                        <p class="gameselectiontext">ROCK</p>
+                        <img class="rockimg" src="rock.png" alt="Img not found" >
+                    </div>
+                    <div class="paper" id="cpaperdiv">
+                        <p class="gameselectiontext">PAPER</p>
+                        <img class="paperimg" src="paper.png" alt="Img not found" >
+                    </div>
+                    <div class="scissor" id="cscissordiv">
+                        <p class="gameselectiontext">SCISSOR</p>
+                        <img class="paperimg" src="scissors.png" alt="Img not found" >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            <div class="result">
+                <h1  id="winner"></h1>
+            </div>
+    
+</div>
+</body>
+</html>
