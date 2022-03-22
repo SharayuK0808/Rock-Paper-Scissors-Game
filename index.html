@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="style.css">
 <body>
     <div>
-    
     <h1 class="gamename">ROCK, PAPER, SCISSOR?<br></h1>
     <div class="game"> 
          <div class="player">
@@ -21,17 +20,17 @@
                 </div>
                 <div class="pselections">
 
-                    <div class="rock" id="rockdiv">
+                    <div class="rock" id="rockdiv" onclick="play('rock')">
                         <p class="gameselectiontext" id="procktxt">ROCK</p>
                         <img class="rockimg" src="rock.png" alt="Img not found" id="prock">
                     </div>
 
-                    <div class="paper" id="paperdiv">
+                    <div class="paper" id="paperdiv" onclick="play('paper')">
                         <p class="gameselectiontext" id="ppapertxt">PAPER</p>
                         <img class="paperimg" src="paper.png" alt="Img not found" id="ppaper" >
                     </div>
 
-                    <div class="scissor" id="scissordiv">
+                    <div class="scissor" id="scissordiv" onclick="play('scissor')">
                         <p class="gameselectiontext" id="pscissortxt">SCISSOR</p>
                         <img class="scissorimg" src="scissors.png" alt="Img not found" id="pscissor">
                     </div>

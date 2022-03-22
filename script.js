@@ -6,75 +6,13 @@ function computerPlay(){
     return comp[randNo];
 }
 
-function playSound() {
-    const buttonPress = document.getElementById("startbuttonsound");
-    buttonPress.play();
-}
- let mainButton = document.getElementById("rockdiv");
- if(mainButton){
-     mainButton.addEventListener("click",playSound);
- }
- else console.log("Cnnot add sound");
-
-document.addEventListener("click",choiceSelection)
-
-function choiceSelection(event){
-
-    let element=event.target;
-    console.log(element);
-
-
-    if(element.classList.contains('rock') && element.id ===("rockdiv")){
-        
-        console.log('rock');
-        play('rock');
-
-    }else if(element.classList.contains('gameselectiontext') && element.id==='procktxt'){
-        console.log('rock');
-        play('rock');
-    }
-    else if(element.classList.contains('rockimg') && element.id==='prock'){
-        console.log('rock');
-        play('rock');
-    }
-
-
-    if(element.classList.contains('paper') && element.id ===("paperdiv")){
-        console.log('paper');
-        play('paper');
-
-    }else if(element.classList.contains('gameselectiontext') && element.id==='ppapertxt'){
-        console.log('paper');
-        play('paper');
-    }
-    else if(element.classList.contains('paperimg') && element.id==='ppaper'){
-        console.log('paper');
-        play('paper');
-    }
-
-
-    if(element.classList.contains('scissor') && element.id ===("scissordiv")){
-        console.log('scissor');
-        play('scissor');
-
-    }else if(element.classList.contains('gameselectiontext') && element.id==='pscissortxt'){
-        console.log('scissor');
-        play('scissor');
-    }
-    else if(element.classList.contains('scissorimg') && element.id==='pscissor'){
-        console.log('scissor');
-        play('scissor');
-    }
-
-}
-
 let playerScore=0,computerScore=0,count=0;
 
 function play(pSelection){
 
     console.log("in play");
     console.log(pSelection);
-    let cSelection=computerPlay();
+    let cSelection=computerPlay(); //Computer choice
     console.log("Computers choice");
     console.log(cSelection);
 
@@ -115,16 +53,19 @@ function play(pSelection){
             console.log(playerScore);
             const p=document.getElementById("playerScoreid").innerHTML= " Score:  "+playerScore;
             const c=document.getElementById("computerScoreid").innerHTML= "Score: "+computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": It's a draw!";
         }
         else if(cSelection==='paper'){
             computerScore++;
             console.log(playerScore);
             const c=document.getElementById("computerScoreid").innerHTML= 'Score: '+computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": Paper beats rock! You loose!";
         }
         else if(cSelection==='scissor'){
             playerScore++;
             console.log(playerScore);
            const p= document.getElementById("playerScoreid").innerHTML= 'Score: '+playerScore;
+           document.getElementById("winner").innerHTML="Round "+count+": You won!";
         }
         
     }else if(pSelection==='paper'){
@@ -135,15 +76,19 @@ function play(pSelection){
         if(cSelection==='rock'){
             playerScore++;
             const p= document.getElementById("playerScoreid").innerHTML= 'Score: '+playerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": You won!";
+
         }
         else if(cSelection==='paper'){
           
             const p=document.getElementById("playerScoreid").innerHTML= ' Score: '+playerScore;
             const c=document.getElementById("computerScoreid").innerHTML= 'Score: '+computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": It's a Draw!";
         } 
         else if(cSelection==='scissor'){
             computerScore++;
             const c=document.getElementById("computerScoreid").innerHTML= 'Score:'+computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": You loose!";
         }
     }else if(pSelection==='scissor'){
         count++;
@@ -153,14 +98,17 @@ function play(pSelection){
         if(cSelection==='rock'){
             computerScore++;
             const c=document.getElementById("computerScoreid").innerHTML= 'Score: '+computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": You loose!";
         }
         else if(cSelection==='paper'){
             playerScore++;
             const p=document.getElementById("playerScoreid").innerHTML= 'Score: '+playerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": You won!";
         }else if(cSelection==='scissor'){
           
             const p=document.getElementById("playerScoreid").innerHTML= 'Score: '+ playerScore;
             const c=document.getElementById("computerScoreid").innerHTML= 'Score: ' +computerScore;
+            document.getElementById("winner").innerHTML="Round "+count+": It's a Draw!";
         }
     }
     if(count==5)
@@ -173,17 +121,18 @@ function endGame(playerScore,computerScore){
 
         if(playerScore==computerScore){
 
-            document.getElementById("winner").innerHTML="IT'S A DRAW!!";
+            document.getElementById("winner").innerHTML="IT'S A DRAW!!<br>"+playerScore+":"+computerScore;
         }
         else if(playerScore>computerScore){
-            document.getElementById("winner").innerHTML="YOU WIN!!";
+            document.getElementById("winner").innerHTML="YOU WIN!!<br>"+playerScore+":"+computerScore;
             document.getElementById("winner").style.color="green";
         }
         else{
-            document.getElementById("winner").innerHTML="YOU LOST!";
+            document.getElementById("winner").innerHTML="YOU LOST!<br>"+playerScore+":"+computerScore;
             document.getElementById("winner").style.color="red";
         }
-//    playAgain();
+        
+        const myTimeout = setTimeout(playAgain, 2000);
 
 }
 
